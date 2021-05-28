@@ -51,8 +51,11 @@
     </style>
 </head>
 <body>
-    
-    <h1 >Hello Strive STudent</h1>
+
+    <input type="button" value="Change h1" onclick="addNewStyle()" />
+    <input type="button" value="Insert Row" onclick="doTheInsert()" />
+
+    <h1 id = "main h1" >Hello Strive STudent</h1>
     <hr>
     <ol>
         <li>Student</li>
@@ -103,7 +106,7 @@
         </tr>
       </table>
 
-      <div>
+      <div id="countainer">
           <p class="style">How be a good student:</p>
           <ul>
               <li>Attende the class</li>
@@ -119,5 +122,26 @@
               Dublin,1 - Irleand
           </div>
       </footer>
+      <script lang="text/javascript">
+        let idCountainer = document.getElementById ("countainer")
+        console.log (idCountainer)
+        let pegarTd = document.querySelectorAll("td")
+        console.log (pegarTd)
+
+    const addNewStyle = function () {
+    let newStyleH1 = document.getElementById("main h1")
+    let currentColor = newStyleH1.style.color;
+    newStyleH1.style.color = currentColor === "black" ? 'green' : 'black'
+    
+    }
+    const doTheInsert = function () {
+        newRow="<td>New row text</td><td>New row 2nd cell</td>";
+        let add = document.getElementsByTagName("table").innerHTML += newRow;
+       // var newRow=document.getElementsByTagName('table').insertRow();
+         // newRow = "<td>New row text</td><td>New row 2nd cell</td>"; <-- won't work
+       // newRow.innerHTML = "<td>New row text</td><td>New row 2nd cell</td>";
+}
+      </script>
+
 </body>
 </html>
